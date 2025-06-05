@@ -91,7 +91,7 @@ pipeline {
         stage('Functional/API testing') {
             when{
                 expression {
-                    params,deploy_to == 'dev'
+                    params.deploy_to == 'dev'
                 }
             }
             steps {
