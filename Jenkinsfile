@@ -48,12 +48,12 @@ pipeline{
                     params.deploy_to == 'dev'
                 }
             }
-        }
-        steps{
-            script{
-                sh"""
-                echo selinum testing
-                """
+            steps{
+                script{
+                    sh"""
+                    echo selinum testing
+                    """
+                }
             }
         }
         stage('Integration testing') {
@@ -62,14 +62,15 @@ pipeline{
                     params.deploy_to == 'qa'
                 }
             }
-        }
-        steps{
-            script{
-                sh"""
-                echo it will be cucumber
-                """
+            steps{
+                script{
+                    sh"""
+                    echo it will be cucumber
+                    """
+                }
             }
         }
+        
     }
     post { 
         always { 
