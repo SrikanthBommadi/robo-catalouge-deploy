@@ -40,35 +40,35 @@ pipeline {
                 }
             }
         }
-        stage('Functional/apitesting'){
-            when{
-                expression{
-                    params.deploy_to == 'dev'
-                }
-            }
-        }
-        steps{
-            script{
-                sh"""
-                echo selinum testing
-                """
-            }
-        }
-        stage('Integration testing') {
-            when{
-                expression {
-                    params.deploy_to == 'qa'
-                }
-            }
-            steps{
-                script{
-                    sh"""
-                    echo it will run uat or qa cucumber
-                    """
-                }
-            }
-        }
-    }
+    //     stage('Functional/apitesting'){
+    //         when{
+    //             expression{
+    //                 params.deploy_to == 'dev'
+    //             }
+    //         }
+    //     }
+    //     steps{
+    //         script{
+    //             sh"""
+    //             echo selinum testing
+    //             """
+    //         }
+    //     }
+    //     stage('Integration testing') {
+    //         when{
+    //             expression {
+    //                 params.deploy_to == 'qa'
+    //             }
+    //         }
+    //         steps{
+    //             script{
+    //                 sh"""
+    //                 echo it will run uat or qa cucumber
+    //                 """
+    //             }
+    //         }
+    //     }
+    // }
     post { 
         always { 
             echo 'I will always say Hello again!'
