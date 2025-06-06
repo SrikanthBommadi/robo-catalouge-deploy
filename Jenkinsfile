@@ -30,7 +30,7 @@ pipeline{
         stage('Deploy') {
             steps {
                 script{
-                    withAWS(region: 'us-east-1', credentials: 'aws') {
+                    withAWS(region: 'us-east-1', credentials: "aws-${environment}") {
                         sh """
                             aws eks update-kubeconfig --region $REGION --name ${PROJECT}-developer
                             kubectl get nodes
